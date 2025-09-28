@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .question {
+      font-weight: bold;
+	  text-align: left;
+      margin: 0px;
+    }
+    .options {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    #timer {
+      font-size: 18px;
+      color: red;
+      font-weight: bold;
+    }
+    #score {
+      font-size: 20px;
+      color: green;
+      margin-top: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>Web Designing Quiz</h2></br>
+    <div id="timer">Time Left: 90s</div></br>
+    <form id="quizForm">
+      <div class="question">1. What does HTML stand for?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
+        <label><input type="radio" name="q1" value="b"> High Tech Machine Language</label>
+        <label><input type="radio" name="q1" value="c"> Home Tool Management Language</label>
+      </div>
+
+      <div class="question">2. Which company developed JavaScript?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> Microsoft</label>
+        <label><input type="radio" name="q2" value="b"> Netscape</label>
+        <label><input type="radio" name="q2" value="c"> Google</label>
+      </div>
+
+      <div class="question">3. Which symbol is used for comments in JavaScript?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> //</label>
+        <label><input type="radio" name="q3" value="b"> #</label>
+        <label><input type="radio" name="q3" value="c"> &lt;!-- --&gt;</label>
+      </div>
+	  
+	   <div class="question">4. Which attribute adds tooltip text to an element in HTML?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a"> link</label>
+        <label><input type="radio" name="q4" value="b"> title</label>
+        <label><input type="radio" name="q4" value="c"> meta</label>
+      </div>
+	  
+	  <div class="question">5. what does the position:absolute do in CSS </div></br>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> Positions element relative to browser window </label>
+        <label><input type="radio" name="q5" value="b"> Positions element relative to nearest positioned ancestor</label>
+        <label><input type="radio" name="q5" value="c"> Makes element sticky</label>
+      </div>
+	  
+	  <div class="question">6. what is the output of the following JavaScript code? Console.log("10"-2);</div></br>
+      <div class="options">
+        <label><input type="radio" name="q6" value="a"> "102"</label>
+        <label><input type="radio" name="q6" value="b"> 8</label>
+        <label><input type="radio" name="q6" value="c"> TypeError</label>
+      </div>
+	  
+	  <div class="question">7. In JavaScript, what is the output of :console.log(typeofnull); </div></br>
+      <div class="options">
+        <label><input type="radio" name="q7" value="a"> "null"</label>
+        <label><input type="radio" name="q7" value="b"> "undefined"</label>
+        <label><input type="radio" name="q7" value="c"> "object"</label>
+      </div>
+	  
+	  <div class="question">8. The HTML tag that specifies a CSS style embedded in an element is called ____? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a"> style</label>
+        <label><input type="radio" name="q8" value="b"> embed</label>
+        <label><input type="radio" name="q8" value="c"> title</label>
+      </div>
+	  
+	  <div class="question">9. Which method allows you to load a JavaScript file asynchronously without blocking the page rendering? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q9" value="a"> defer</label>
+        <label><input type="radio" name="q9" value="b"> onload </label>
+        <label><input type="radio" name="q9" value="c"> async </label>
+      </div>
+	  
+	  <div class="question">10. Which CSS property allows you to set rounded corners for an element? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q10" value="a">border-radius </label>
+        <label><input type="radio" name="q10" value="b">border-curve</label>
+        <label><input type="radio" name="q10" value="c">round-corner </label>
+      </div>
+	  
+	  <div class="question">11. Which of the following is not the property of the CSS box model?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q11" value="a"> margin</label>
+        <label><input type="radio" name="q11" value="b"> color</label>
+        <label><input type="radio" name="q11" value="c"> width</label>
+      </div>
+	  
+	 
+	 <div class="question">12. Among the given statements, which statement defines closures in JavaScript?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q12" value="a">JavaScript is a function that is enclosed with references to its inner function scope </label>
+        <label><input type="radio" name="q12" value="b">JavaScript is a function that is enclosed with references to its lexical environment </label>
+        <label><input type="radio" name="q12" value="c">JavaScript is a function that is enclosed with the object to its inner function scope </label>
+      </div>
+	  
+	  <div class="question">13. What is the impact of excessive HTML comments on a page?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q13" value="a"> Increases performance</label>
+        <label><input type="radio" name="q13" value="b"> Reduces performance by increasing the file size </label>
+        <label><input type="radio" name="q13" value="c"> Blocks the execution of the code</label>
+      </div>
+	  
+	  <div class="question">14. Which of the following is correct about JavaScript?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q14" value="a">JavaScript is an Object-Based language </label>
+        <label><input type="radio" name="q14" value="b">JavaScript is an Object-Oriented language </label>
+        <label><input type="radio" name="q14" value="c">JavaScript is a High-level language </label>
+      </div>
+	  
+	  <div class="question">15. Which of the following are static methods in JavaScript?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q15" value="a"> Both Date.parse() and Date.UTC() </label>
+        <label><input type="radio" name="q15" value="b"> Date.clear() </label>
+        <label><input type="radio" name="q15" value="c"> Date.parse() </label>
+      </div>
+	  
+	  <div class="question">16. Where is Client-side JavaScript code is embedded within HTML documents? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q16" value="a">A URL that uses the special javascript:code </label>
+        <label><input type="radio" name="q16" value="b">A URL that uses the special javascript:stack </label>
+        <label><input type="radio" name="q16" value="c">A URL that uses the special javascript:protocol </label>
+      </div>
+	  
+	  <div class="question">17. Which of the following is not a framework?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q17" value="a">JavaScript </label>
+        <label><input type="radio" name="q17" value="b">jquery </label>
+        <label><input type="radio" name="q17" value="c">Cocoa Js</label>
+      </div>
+	  
+	  <div class="question">18. Which of the following is the property that is triggered in response to JS errors?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q18" value="a">onexception </label>
+        <label><input type="radio" name="q18" value="b">onclick </label>
+        <label><input type="radio" name="q18" value="c">onerror </label>
+      </div>
+	  
+	  <div class="question">19. Which of the following CSS selectors are used to specify a group of elements? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q19" value="a">Class </label>
+        <label><input type="radio" name="q19" value="b">id </label>
+        <label><input type="radio" name="q19" value="c">both id and class </label>
+      </div>
+	  
+	  <div class="question">20. Can negative values be allowed in the “padding” property? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q20" value="a">Yes </label>
+        <label><input type="radio" name="q20" value="b">No </label>
+        <label><input type="radio" name="q20" value="c">Depends on the property </label>
+      </div>
+	  
+	  <div class="question">21. What will be the result or type of error if p is not defined in the following JavaScript code snippet?</br>
+
+console.log(p)</div></br>
+      <div class="options">
+        <label><input type="radio" name="q21" value="a">Reference Error </label>
+        <label><input type="radio" name="q21" value="b">Null </label>
+        <label><input type="radio" name="q21" value="c">Zero </label>
+      </div>
+	  
+	  <div class="question">22.  Which CSS property is used to specify the font style? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q22" value="a">font-family </label>
+        <label><input type="radio" name="q22" value="b">font-style</label>
+        <label><input type="radio" name="q22" value="c">font-size</label>
+      </div>
+	  
+	  <div class="question">23. What is the basic difference between JavaScript and Java? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q23" value="a">Functions are considered as fields </label>
+        <label><input type="radio" name="q23" value="b">Variables are specific</label>
+        <label><input type="radio" name="q23" value="c">Functions are values, and there is no hard distinction between methods and fields </label>
+      </div>
+	  
+	  <div class="question">24. Which of the following can be used to call a JavaScript Code Snippet?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q24" value="a">Triggering Event </label>
+        <label><input type="radio" name="q24" value="b">Function/Method </label>
+        <label><input type="radio" name="q24" value="c">Preprocessor </label>
+      </div>
+	  
+	  <div class="question">25. Which of the following CSS property specifies the look and design of an outline? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q25" value="a"> outline-style</label>
+        <label><input type="radio" name="q25" value="b"> outline-font</label>
+        <label><input type="radio" name="q25" value="c"> outline-format</label>
+      </div>
+	  
+	  <div class="question">26. Arrays in JavaScript are defined by which of the following statements? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q26" value="a">It is an ordered list of objects </label>
+        <label><input type="radio" name="q26" value="b">It is an ordered list of functions </label>
+        <label><input type="radio" name="q26" value="c">It is an ordered list of values </label>
+      </div>
+	  
+	  <div class="question">27. Which of the following object is the main entry point to all client-side JavaScript features and APIs? </div></br>
+      <div class="options">
+        <label><input type="radio" name="q27" value="a"> Window </label>
+        <label><input type="radio" name="q27" value="b"> Position</label>
+        <label><input type="radio" name="q27" value="c"> Standard</label>
+      </div>
+	  
+	  <div class="question">28. What is the most commonly used character encoding in HTML?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q28" value="a"> ISO-8859-1</label>
+        <label><input type="radio" name="q28" value="b"> UTF-8 </label>
+        <label><input type="radio" name="q28" value="c"> UTF-6</label>
+      </div>
+	  
+	  <div class="question">29. What type of CSS is generally recommended for designing large web pages?</div></br>
+      <div class="options">
+        <label><input type="radio" name="q29" value="a"> Inline </label>
+        <label><input type="radio" name="q29" value="b"> Internal</label>
+        <label><input type="radio" name="q29" value="c"> External</label>
+      </div>
+	  
+	  <div class="question">30. Will the following JavaScript code work?</br>
+
+var js = (function(x) {return x*x;}(10));</div></br>
+      <div class="options">
+        <label><input type="radio" name="q30" value="a"> Error </label>
+        <label><input type="radio" name="q30" value="b"> Yes, perfectly </label>
+        <label><input type="radio" name="q30" value="c"> Exception will be thrown</label>
+      </div>
+	  
+	  
+	  
+	  
+
+      <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+    <div id="score"></div>
+  </div>
+
+  <script>
+    let timeLeft = 90;
+    let timer = setInterval(function() {
+      document.getElementById("timer").innerText = "Time Left: " + timeLeft + "s";
+      timeLeft--;
+      if (timeLeft < 0) {
+        clearInterval(timer);
+        submitQuiz();
+      }
+    }, 1000);
+
+    function submitQuiz() {
+      clearInterval(timer); // stop timer
+      let form = document.getElementById("quizForm");
+      let score = 0;
+
+      // Correct answers
+      let answers = {
+        q1: "a",  
+		q2: "b", 
+		q3: "a", 
+		q4: "b", 
+		q5: "b", 
+		q6: "b",  
+		q7: "c", 
+		q8: "a", 
+		q9: "c", 
+		q10: "a",
+		q11: "b", 
+		q12: "b", 
+		q13: "b", 
+		q14: "a", 
+		q15: "a", 
+	    q16: "c",  
+		q17: "a", 
+		q18: "c", 
+		q19: "a", 
+		q20: "b", 
+		q21: "a",  
+		q22: "b",
+		q23: "c", 
+		q24: "b", 
+		q25: "a", 
+	    q26: "c",  
+		q27: "a", 
+		q28: "b", 
+		q29: "c", 
+		q30: "b" 
+		
+      };
+
+      for (let key in answers) {
+  let selectedOption = form.elements[key];
+  if (selectedOption) {
+    let selected = selectedOption.value;
+    if (selected === answers[key]) {
+      score++;
+    }
+  }
+}
+
+      document.getElementById("score").innerText = 
+        "Your Score: " + score + " / " + Object.keys(answers).length;
+
+      // Disable inputs after submission
+      let inputs = form.querySelectorAll("input");
+      inputs.forEach(input => input.disabled = true);
+    }
+  </script>
+</body>
+</html>
